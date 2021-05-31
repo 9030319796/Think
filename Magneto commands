@@ -1,0 +1,58 @@
+Unlock the user
+php bin/magento admin:user:unlock magento
+
+Create user in Terminal
+sudo php bin/magento admin:user:create --admin-user="magento1" --admin-password="M@admin123" --admin-email="sampatha@kensium.com"
+
+<VirtualHost *:80>
+#    ServerAdmin admin@example.com
+    ServerName local.tupperware.com
+    ServerAlias devtest.bauermerch.com
+    DocumentRoot /home/bmp/html_bauermerch/httpdocs/
+    ErrorLog /home/bmp/html_bauermerch/logs/error_bauermerch.log
+    CustomLog /home/bmp/html_bauermerch/logs/access_bauermerch.log combined
+<IfModule mpm_itk_module>
+AssignUserId bmp  bmp
+</IfModule>
+</VirtualHost>
+
+URL checking: 
+
+select * from core_config_data limit 10;
+select * from core_config_data where path like '%base%url%';
+SELECT path,value FROM core_config_data WHERE path LIKE 'web/unsecure/base%';
+
+URL update:
+update core_config_data set value = 'http://devtest.strapworks.com/' where path = 'web/unsecure/base_url';
+update core_config_data set  value='http://devtest.american.com/' where config_id=2;
+update core_config_data set value='http://local.north40.com/'where path = '%base%url%'; 
+
+php bin/magento setup:static-content:deploy -f 
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+ php bin/magento module:enable –all 
+php bin/magento setup:static-content
+php bin/magento setup:static-content:deploy
+php bin/magento cache:clean
+php bin/magento cache:flush
+bin/magento info:adminuri - display admin URL
+php bin/magento module:disable Magento_TwoFactorAuth
+php bin/magento maintenance:disable/enable/status
+
+bin/magento setup:install --base-url=http://devtest.testingm4.com/ \
+--db-host=localhost --db-name=testimgm4 --db-user=testing --db-password=kspl@1234 \
+--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+--admin-user=admin --admin-password=admin123 --language=en_US \
+--currency=USD --timezone=America/Chicago --use-rewrites=1 \
+--search-engine=elasticsearch7 --elasticsearch-host=localhost \
+--elasticsearch-port=9200
+
+php bin/magento setup:install --base-url=http://111.93.25.90/connectorv3mage24/ --db-host=192.168.10.244 --db-name=connectorv3mage24 --db-user=connectorv3mage24 --db-password='HkbM@lk201' --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=0 --search-engine=elasticsearch7 --elasticsearch-host=localhost --elasticsearch-port=9200
+
+
+sudo sed -i '$a \\n'"cluster.name: Elasticsearch" /etc/elasticsearch/elasticsearch.yml
+sudo sed -i '$a \\n'"node.name: 7.7.1" /etc/elasticsearch/elasticsearch.yml
+sudo sed -i '$a \\n'"network.host: 127.0.0.1" /etc/elasticsearch/elasticsearch.yml
+sudo sed -i '$a \\n'"http.port: 9200" /etc/elasticsearch/elasticsearch.yml
+sudo sed -i '$a \\n'"discovery.type: single-node" /etc/elasticsearch/elasticsearch.yml
+sudo sed -i '$a \\n'"node.max_local_storage_nodes: 3" /etc/elasticsearch/elasticsearch.yml

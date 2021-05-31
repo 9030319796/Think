@@ -1,0 +1,417 @@
+
+
+     1  apt-get update
+	 
+    2  apt-get install openssh-server
+	
+    3  apt-get install vim
+	
+    4  vim /etc/ssh/sshd_config
+	
+    5  service ssh restart
+	
+    6  ifconfig
+	
+  Changing bash Line
+   -----------------
+  export PS1="Hello@welcome> "
+
+usermod -aG sudo newuser
+
+
+	LAMP INSTALLATION COmmand
+	========================
+	
+	$ sudo apt-get install lamp-server^ phpmyadmin
+	
+	apt-get remove --purge lamp-server^ phpmyadmin
+	
+	apt-get autoremove -y
+	
+	sudo apt-get autoclean
+	
+	apt-get remove --purge phpmyadmin
+	
+	
+  GIT Push and Pull
+  ==================
+  ssh key generation  
+ssh-keygen -t rsa -C “narendarl@kensium.com” 
+ git clone "reop"
+ git status - to check the status of repo
+ git add . - chnaged add to local repo then you can commit after this
+ git commit -m "value or any matter" - Need to commit when something changes in local file
+ git push - push the code to git 
+ git push origin master -- updated the folders when you created the folder under git folder as well 
+ git remote -v -- show the repo push 
+  git remote add new https://gitlab.kensium.com/kensiumgitlab/msl-connector.git
+  git push new --mirror
+ssh-keygen -t rsa -b 4096 -C "user id of git"
+
+Libreoffice installtion:
+====================
+sudo add-apt-repository ppa:libreoffice/ppa
+
+sudo apt update
+
+sudo apt install libreoffice
+	
+	APACHE2 Installation:
+	==============
+	
+    apt-get -y install apache2
+	
+	Sublime:
+  ========
+ curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+  sudo add-apt-repository "deb https://download.sublimetext.com/ apt/stable/"
+sudo apt-get install sublime-text
+	PHP installation
+	=============
+	
+    apt-get install -y software-properties-common
+	
+    add-apt-repository ppa:ondrej/php
+	
+    apt-get update
+   
+   apt-get install -y php5.6 php5.6-fpm php5.6-mbstring php5.6-mcrypt php5.6-dba php5.6-gd php5.6-intl php5.6-dev php5.6-zip php5.6-soap php5.6-bcmath php5.6-curl php5.6-mysql php5.6-json php5.6-cgi php5.6-xml libapache2-mod-php5.6 php5.6-bz2 php5.6-common
+
+    apt-get install -y php7.0 php7.0-fpm php7.0-mbstring php7.0-mcrypt php7.0-dba php7.0-gd php7.0-intl php7.0-dev php7.0-zip php7.0-soap php7.0-bcmath php7.0-curl php7.0-mysql php7.0-json php7.0-cgi php7.0-xml libapache2-mod-php7.0 php7.0-fpm php7.0-bz2 php7.0-common
+ 
+ 
+    apt-get install -y php7.1 php7.1-fpm php7.1-mbstring php7.1-mcrypt libapache2-mod-php7.1 php7.1-dba php7.1-gd php7.1-intl php7.1-dev php7.1-zip php7.1-soap php7.1-bcmath php7.1-curl php7.1-mysql php7.1-json php7.1-cgi php7.1-xml  php7.1-bz2 php7.1-common
+   
+    apt-get install -y php7.2 php7.2-fpm php7.2-mbstring php7.2-dba php7.2-gd php7.2-intl php7.2-dev php7.2-zip php7.2-soap php7.2-bcmath php7.2-curl php7.2-mysql php7.2-json php7.2-cgi php7.2-xml libapache2-mod-php7.2 php7.2-bz2 php7.2-common   
+	
+  apt-get install -y php7.3 php7.3-fpm php7.3-mbstring php7.3-dba php7.3-gd php7.3-intl php7.3-dev php7.3-zip php7.3-soap php7.3-bcmath php7.3-curl php7.3-mysql php7.3-json php7.3-cgi php7.3-xml libapache2-mod-php7.3 php7.3-bz2 php7.3-common php7.3-xdebug   
+	
+apt-get install -y php7.4 php7.4-fpm php7.4-mbstring php7.4-mcrypt php7.4-dba php7.4-gd php7.4-intl php7.4-dev php7.4-zip php7.4-soap php7.4-bcmath php7.4-curl php7.4-mysql php7.4-json php7.4-cgi php7.4-xml libapache2-mod-php7.4 php7.4-bz2 php7.4-common
+
+apt-get install -y php8.0 php8.0-fpm php8.0-mbstring php8.0-mcrypt php8.0-dba php8.0-gd php8.0-intl php8.0-dev php8.0-zip php8.0-soap php8.0-bcmath php8.0-curl php8.0-mysql php8.0-json php8.0-cgi php8.0-xml libapache2-mod-php8.0 php8.0-bz2 php8.0-common
+	
+   
+    php -v
+    php -m
+
+    PHP strom:
+    ----------
+    wget https://download-cf.jetbrains.com/webide/PhpStorm-2018.2.7.tar.gz
+    sudo tar xvf PhpStorm-2018.2.7.tar.gz --directory /opt/
+     cd /opt/Phpstorm-*/bin/phpstorm.sh
+
+Composer :
+
+php composer-setup.php --version=1.9.0 --install-dir=/usr/bin --filename=composer
+sudo php composer-setup.php --install-dir=/usr/bin --filename=composer
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+	
+  IONCUBE LOADER:
+  ---------------
+  cd /usr/local
+  sudo wget http://downloads2.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
+  sudo tar xzf ioncube_loaders_lin_x86-64.tar.gz
+  Add the below line in php.ini file in /etc/php5/apache2 & /etc/php5/cli
+  zend_extension=/usr/local/ioncube/ioncube_loader_lin_5.5.so
+
+	Syncthing Tool download:
+  ------------------------
+  # Add the release PGP keys:
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+
+# Add the "stable" channel to your APT sources:
+echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Update and install syncthing:
+sudo apt-get update
+sudo apt-get install syncthing
+
+
+  Swap File
+  --------
+   fallocate -l 2G /swapfile
+  dd if=/dev/zero of=/swapfile bs=1024 count=10048756
+  chmod 600 /swapfile
+  mkswap /swapfile
+  swapon /swapfile
+  vi /etc/fstab
+  /swapfile       swap    swap    defaults        0 0
+
+
+	
+Fonts:
+=====
+sudo wget --content-disposition -P /usr/share/fonts/truetype/robotomono https://github.com/google/fonts/blob/master/apache/robotomono/RobotoMono-{Bold,BoldItalic,Italic,Light,LightItalic,Medium,MediumItalic,Regular,Thin,ThinItalic}.ttf?raw=true
+   
+Adobe Reader
+=========
+
+ wget ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb
+
+
+   MYSQL Installation
+   ============
+
+     $ sudo apt-get install software-properties-common
+     $ sudo add-apt-repository -y ppa:ondrej/mysql-5.6
+     $ sudo apt-get update
+     $ sudo apt-get -y install mysql-server-5.6 mysql-client-5.6
+
+    
+   31  mysql –u root –p
+   32  service mysql status
+   34  mysql --version
+   
+   
+    PHP myadmin Installation
+	=================
+   
+   35  apt-get -y install phpmyadmin
+   
+   36  service apache2 restart
+  
+   37  vim /var/www/html/info.php
+
+<?php
+phpinfo(); 
+?>
+
+Google chrome Download:   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+Slack Download: wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.0.2-amd64.deb
+  
+  Teams download 
+
+    wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.30857_amd64.deb
+  
+  Zoom wget https://zoom.us/client/latest/zoom_amd64.deb
+
+    apt-get install ./zoom_amd64.deb
+
+   apt autoremove phpmyadmin
+   
+   
+   
+   IONCUBE loader Installation
+   ==================
+   
+   44  wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
+   
+   45  tar xvfz ioncube_loaders_lin_x86-64.tar.gz
+   
+   PHP 5.6
+   ==========
+  
+   
+   cp ioncube/ioncube_loader_lin_5.6.so /usr/lib/php/20151012/
+   
+==> vim /etc/php/5.6/apache2/php.ini    ====>
+   
+   zend_extension = "/usr/lib/php/20151012/ioncube_loader_lin_5.6.so"
+
+==> vim /etc/php/5.6/cli/php.ini        ====>
+   
+   zend_extension = "/usr/lib/php/20151012/ioncube_loader_lin_5.6.so"
+    
+   PHP 7.0
+   =======
+ cp ioncube/ioncube_loader_lin_7.0.so /usr/lib/php/20151012/
+ 
+==> vim /etc/php/7.0/apache2/php.ini    ====>
+   
+   zend_extension = "/usr/lib/php/20151012/ioncube_loader_lin_7.0.so"
+
+==> vim /etc/php/7.0/cli/php.ini        ====>
+   
+   zend_extension = "/usr/lib/php/20151012/ioncube_loader_lin_7.0.so"
+   
+   PHP7.1
+   ======
+ 
+cp ioncube/ioncube_loader_lin_7.1.so /usr/lib/php/20151012/
+
+
+==> vim /etc/php/7.1/apache2/php.ini    ====>
+   
+   zend_extension = "/usr/lib/php/20151012/ioncube_loader_lin_7.1.so"
+
+==> vim /etc/php/7.1/cli/php.ini        ====>
+   
+   zend_extension = "/usr/lib/php/20151012/ioncube_loader_lin_7.1.so"
+
+PHP7.2
+=======
+    cp ioncube/ioncube_loader_lin_7.2.so /usr/lib/php/20151012/
+
+===> vim /etc/php/7.2/apache2/php.ini    ====>
+   
+   zend_extension = "/usr/lib/php/20151012/ioncube_loader_lin_7.2.so"
+
+===> vim /etc/php/7.2/cli/php.ini        ====>
+   
+   zend_extension = "/usr/lib/php/20151012/ioncube_loader_lin_7.2.so"
+
+ 
+   
+   
+   =============================
+   
+   
+   
+   
+   90  apt-get install htop -y
+   
+   91  add-apt-repository -y ppa:shutter/ppa
+   
+   92  apt-get install shutter -y
+   
+       apt-get install git-core -y
+   
+   93  apt-get install git git-flow -y
+   
+   94  apt-get install meld -y
+   
+   95  apt-get install intltool itstool gir1.2-gtksource-3.0 libxml2-utils -y
+   96  git clone https://git.gnome.org/browse/meld
+   97  cd meld
+   98  sudo python setup.py install
+   
+   99  apt-get install zsh -y
+   
+  100  apt-get install git-core -y
+  101  wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+  102  chsh -s `which zsh`
+  103  dpkg --add-architecture i386
+  
+  104  apt-get install wine -y
+  105  sudo apt-get install gdebi
+  106  cd
+  107  cd ~/Downloads && sudo gdebi AdbeRdr9.5.5-1_i386linux_enu.deb
+  108  dir
+  109  sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+  110  sudo apt-get update; sudo apt-get install acroread
+  
+  111  add-apt-repository -r "deb http://archive.canonical.com/ precise partner"
+  112  apt-get update
+  113  gedit /etc/gnome/defaults.list
+  
+  114  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  115  dpkg –i google-chrome-stable_current_amd64.deb
+  116  ls
+  117  dpkg -i google-chrome-stable_current_amd64.deb
+  
+  
+  
+  Antivirus INSTALLATION
+  ======================
+  
+  apt-get install clamav
+  
+  Java Installation
+  ===========
+  
+  apt-get install openjdk-7-jdk
+  
+  java -version
+  
+  
+  Cisco anyconnect
+  ===========
+  
+  
+  http://www.socsci.uci.edu/~jstern/uci_vpn_ubuntu/
+  
+  JMETER INSTALLATION
+  ===============
+  
+   wget http://redrockdigimark.com/apachemirror//jmeter/binaries/apache-jmeter-5.0.tgz
+   
+   
+   tar -xf apache-jmeter-5.0.tgz
+   
+    cd apache-jmeter-5.0/bin 
+	
+	./jmeter
+	
+	Postman INSTALLATION
+	===============
+	
+ wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
+ 
+ sudo tar -xzf postman.tar.gz -C /opt
+ 
+ rm postman.tar.gz
+ 
+ sudo ln -s /opt/Postman/Postman /usr/bin/postman
+ 
+ 
+  ATOM TEXT EDITOR INSTALLATION
+  =======================
+  
+ sudo add-apt-repository ppa:webupd8team/atom
+
+ sudo apt-get update
+ sudo apt-get install atom
+ 
+ TO REMOVE ATOM=
+============
+
+ sudo apt remove --purge atom
+ 
+ Visual studio link
+ ===========
+ 
+ https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15 
+ 
+ Elastic search
+ ==============
+ 
+ 
+ https://www.elastic.co/guide/en/beats/libbeat/5.2/elasticsearch-installation.html
+ 
+ 
+ Forticlient
+ ===========
+ wget https://hadler.me/files/forticlient-sslvpn_4.4.2333-1_amd64.deb
+ 
+ Sublime text editor
+ =====================
+ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+ 
+ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+ 
+ sudo apt-get update
+ 
+sudo apt-get install sublime-text
+ 
+ 
+
+ Rabit mQ
+=========
+
+apt-get update 
+
+echo "deb http://www.rabbitmq.com/debian/ testing main" >> /etc/apt/sources.list
+
+curl http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | sudo apt-key add -
+
+apt-get update
+
+sudo apt-get install rabbitmq-server
+
+sudo vim /etc/default/rabbitmq-server
+
+
+sudo rabbitmq-plugins enable rabbitmq_management
+ 
+ 
+
+
+
+<?php
+
+// Show all information, defaults to INFO_ALL
+phpinfo();
+
+?>
+

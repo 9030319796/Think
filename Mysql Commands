@@ -1,0 +1,111 @@
+
+Change the password for admin user on Acumatica
+UPDATE Users SET Password = 'umken$1um$21', LockedOutDate =null WHERE Username = 'admin'
+UPDATE Users SET Password = 'MoW23@Ken', LockedOutDate =null WHERE Username = 'admin'
+HRMS: UPDATE ioms_activedirectoryconfiguration SET ServerName='183.82.120.94' WHERE ActiveDirectorySetupId=1;
+UPDATE ioms_activedirectoryconfiguration SET ServerName='183.82.120.94' WHERE ActiveDirectorySetupId=1;
+
+create a user in mysql
+
+CREATE USER 'sivakotia'@'%' IDENTIFIED BY 'saken$1um@20';
+
+All databases with sizes:
+select d.name, m.size * 8 / 1024from sys.master_files m JOIN sys.databases d ON d.database_id = m.database_id and m.type =0
+
+grant privileges
+
+GRANT ALL PRIVILEGES ON * . * TO 'sivakotia'@'%';
+FLUSH PRIVILEGES;
+
+DROP USER 'allpartsm1'@'localhost'; 
+
+users in mysql
+
+SELECT User, Host, Password FROM mysql.user;
+ 
+SELECT User FROM mysql.user;
+
+select user from mysql.db where db='rwdev';
+
+password reset 
+
+ SET PASSWORD FOR ‘srinivasraok’@’localhost’ = PASSWORD(‘kspl@1234’);
+ ALTER USER 'srinivasraok'@'localhost' IDENTIFIED BY 'kspl@1234';
+
+Connect database with port:
+-------------------------
+
+mysql -u root --port 3309 -p
+
+ CREATE DATABASE database name;
+
+SHOW DATABASES;
+
+ DROP DATABASE database name;
+
+Backup:
+=====
+mysqldump -u root -p  CE225 | gzip > CE225.sql.gz 
+mysqldump -u root -p db > db.sql
+mysqldump  -u ecklersuser -p ECKSTAGE --single-transaction --skip-triggers | gzip | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > pub/media/eckstage_20201007.sql.gz
+
+Restore:
+========
+CREATE DATABASE testing DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+
+zcat AIA_prod_05_May_2020.sql.gz | mysql -u root -p american
+
+GRANT ALL PRIVILEGES ON * . * TO 'vishnuvardhang'@'localhost';
+
+mysql -u username -p database_name < file.sql
+
+SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'helpdesk';
+
+
+CREATE USER 'sundeepg'@'localhost' IDENTIFIED BY 'sgken$1um20';
+CREATE USER 'venkatasivaj'@'%' IDENTIFIED BY 'vjken$1um19';
+
+
+GRANT ALL PRIVILEGES ON rwdev.* TO 'venkatasivaj'@'%' IDENTIFIED BY 'vjken$1um19';
+GRANT ALL PRIVILEGES ON rwdev.* TO 'venkatasivaj'@'localhost' IDENTIFIED BY 'vjken$1um19';
+
+
+CREATE USER 'magento'@'localhost' IDENTIFIED BY 'magento@123';
+GRANT ALL PRIVILEGES ON myobalfa2019128206.* TO 'renukama'@'%' IDENTIFIED BY 'rmken$1um19';
+GRANT ALL PRIVILEGES ON *.* TO 'magento'@'localhost' IDENTIFIED BY 'magento@123';
+Reset password:
+
+UPDATE mysql.user SET Password=PASSWORD('kspl@1234') WHERE User='nagarajuk';
+
+ALTER USER ''@localhost ACCOUNT LOCK;
+
+REVOKE ALL ON rwdev.* FROM 'muralikrishnan'@'%';
+   REVOKE GRANT OPTION ON rwdev.* FROM 'muralikrishnan'@'%';
+
+Change the password for admin user on Acumatica
+UPDATE Users SET Password = 'kn1t$321', LockedOutDate =null WHERE Username = 'admin'
+
+
+On Windows:
+============
+
+Backup a single databses:
+
+mysqldump database_name > database_name.sql
+
+Backing Up Multiple Databases:
+
+mysqldump --databases database_one database_two > two_databases.sql
+
+Backing Up All Databases
+
+mysqldump --all-databases > all_databases.sql
+
+Restoring a Backup:
+mysql database_name < database_name.sql
+
+mysql --one-database database_name < all_databases.sql 
+
+Check version:
+
+SHOW VARIABLES LIKE "%version%";

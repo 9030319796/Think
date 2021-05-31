@@ -1,0 +1,1 @@
+dir -Recurse -Directory | Select FullName | Export-Csv "E:\test.csv"

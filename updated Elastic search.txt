@@ -1,0 +1,36 @@
+margifox
+CREATE DATABASE margifox DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+
+CREATE USER 'margifox'@'localhost' IDENTIFIED BY 'Mke#ky%21';
+
+GRANT ALL PRIVILEGES ON  margifox.* TO 'margifox'@'localhost';
+
+<VirtualHost *:80>
+#    ServerAdmin admin@example.com
+    ServerName devtest.margifox.com
+    ServerAlias devtest.margifox.com
+    DocumentRoot /home/konnect/html_margifox
+    ErrorLog /home/konnect/html_margifox/logs/error_margifox.log
+    CustomLog /home/konnect/html_margifox/logs/access_margifox.log combined
+<IfModule mpm_itk_module>
+AssignUserId konnect  konnect
+</IfModule>
+</VirtualHost>
+
+update core_config_data set  value='http://devtest.margifox.com/' where config_id=6;
+
+devtest.margifox.conf
+
+php bin/magento module:disable {Magento_Elasticsearch,Magento_InventoryElasticsearch,Magento_Elasticsearch6,Magento_Elasticsearch7}
+
+
+sudo sed -i '$a \\n'"cluster.name: Elasticsearch" /etc/elasticsearch/elasticsearch.yml
+sudo sed -i '$a \\n'"node.name: 7.7.1" /etc/elasticsearch/elasticsearch.yml
+sudo sed -i '$a \\n'"network.host: 127.0.0.1" /etc/elasticsearch/elasticsearch.yml
+sudo sed -i '$a \\n'"http.port: 9200" /etc/elasticsearch/elasticsearch.yml
+sudo sed -i '$a \\n'"discovery.type: single-node" /etc/elasticsearch/elasticsearch.yml
+sudo sed -i '$a \\n'"node.max_local_storage_nodes: 3" /etc/elasticsearch/elasticsearch.yml
+sudo sed -i '$a \\n'"network.host: 127.0.0.1" 
+
+
+bin/magento setup:install --base-url=http://devtest.margifox.com --db-host=localhost --db-name=margifox --db-user=margifox --db-password=Mke#ky%21 --admin-firstname="admin" \--admin-lastname="admin" \--admin-email=rajeswarip@kensium.com --admin-user="admin" --admin-password="admin123"--language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1 --search-engine=elasticsearch7 --elasticsearch-host=127.0.0.1 --elasticsearch-port=9200
